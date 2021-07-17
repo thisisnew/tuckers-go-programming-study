@@ -1,6 +1,7 @@
 package main
 
 import (
+	"tuckers-go-programming-study/ch20/dhl"
 	"tuckers-go-programming-study/ch20/fedex"
 	"tuckers-go-programming-study/ch20/koreaPost"
 )
@@ -22,4 +23,7 @@ func main() {
 	SendBook("어린왕자", fedexSender)
 	SendBook("그리스인 조르바", fedexSender)
 
+	dhlSender := dhl.Dhl{}
+	SendBook("어린왕자", dhlSender)
+	SendBook("그리스인 조르바", dhlSender)
 }
