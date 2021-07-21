@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
+	"os"
 	"sort"
 	"src/github.com/gorilla/mux"
 	"src/github.com/unrolled/render"
@@ -113,7 +114,8 @@ func main() {
 	n.UseHandler(m)
 
 	log.Println("Started App")
-	err := http.ListenAndServe(":3000", n)
+	port := os.Getenv("PORT")
+	err := http.ListenAndServe(":"+port, n)
 	if err != nil {
 		panic(err)
 	}
